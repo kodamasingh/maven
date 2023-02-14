@@ -21,7 +21,7 @@ pipeline
         {
            steps
            {
-              deploy adapters: [tomcat9(credentialsId: '06b551a3-2d1e-4e13-832b-b1d6aaca16bd', path: '', url: 'http://172.31.10.109:8080')], contextPath: 'test1', war: '**/*.war'
+               sh ' /var/lib/jenkins/workspace/declarativepipeline1/webapp/target/webapp.war  ubuntu@172.31.10.109/var/lib/tomcat9/webapps/testapp.war'
            }
         }   
         stage('continuousTesting')
